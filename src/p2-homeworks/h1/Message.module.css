@@ -1,3 +1,78 @@
-.message {
+/*@use postcss-nested;*/
 
+:root {
+    --send-bg: #0B93F6;
+    --send-color: white;
+    --receive-bg: #E5E5EA;
+    --receive-text: black;
+    --page-background: white;
 }
+
+/*body {*/
+/*    font-family: "Helvetica Neue", Helvetica, sans-serif;*/
+/*    font-size: 20px;*/
+/*    font-weight: normal;*/
+/*    max-width: 850px;*/
+/*    margin: 50px 20px;*/
+/*    display: flex;*/
+/*    !*flex-direction: column;*!*/
+/*    background-color: var(--page-background);*/
+/*}*/
+.message{
+    padding-top: 20px;
+    display: flex;
+    /*background-color: aqua;*/
+}
+.message img {
+    /*display: inline;*/
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #0B93F6;
+}
+.message .time{
+    color: rgba(255, 0, 0, 0.42);
+    text-align: right;
+    top: -7px
+}
+.message .name{
+    color: blue;
+}
+.message div {
+    max-width: 255px;
+    word-wrap: break-word;
+    margin-bottom: 0;
+    line-height: 12px;
+    position: relative;
+    padding: 5px 10px;
+    border-radius: 25px;
+}
+.message div:before, div:after {
+               content: "";
+               position: absolute;
+               bottom: 0;
+               height: 35px;
+           }
+
+
+.receive {
+    left: 15px;
+    bottom: 20px;
+    background: var(--receive-bg);
+    color: black;
+    align-self: flex-start;
+}
+.receive:before {
+     left: -10px;
+     width: 20px;
+     background-color: var(--receive-bg);
+     border-bottom-right-radius: 16px 14px;
+ }
+
+.receive:after {
+     left: -26px;
+     width: 26px;
+     background-color: var(--page-background);
+     border-bottom-right-radius: 20px;
+ }
+
