@@ -5,7 +5,7 @@
     --send-color: white;
     --receive-bg: #E5E5EA;
     --receive-text: black;
-    --page-background: white;
+    --page-background: #5e2b2b;
 }
 
 /*body {*/
@@ -21,14 +21,17 @@
 .message{
     padding-top: 20px;
     display: flex;
-    /*background-color: aqua;*/
+    background-color: aqua;
 }
 .message img {
     /*display: inline;*/
     height: 60px;
     width: 60px;
     border-radius: 50%;
-    background-color: #0B93F6;
+    /*margin-top: 35px;*/
+    /*margin-bottom: 7px;*/
+    /*!*background-color: #0B93F6;*!*/
+    z-index: 100;
 }
 .message .time{
     color: rgba(255, 0, 0, 0.42);
@@ -72,7 +75,9 @@
 .receive:after {
      left: -26px;
      width: 26px;
-     background-color: var(--page-background);
+     background-color:aqua;
+     /*//var(--page-background);*/
      border-bottom-right-radius: 20px;
+    z-index: 0;
  }
 

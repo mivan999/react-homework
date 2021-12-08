@@ -16,14 +16,17 @@ const messageData = {
 
 function Message(props: MessageType) {
     return (
-        <div className={s.message}  >
+        <>
+            <div className={s.message}>
             <img src={props.avatar} alt=""/>
-            <div className={s.receive}>
-                <div className={s.name}>{props.name} </div>
-                <div>{props.message}</div>
-                <div className={s.time}>{props.time}</div>
+
+                <div className={s.receive}>
+                    <div className={s.name}>{props.name} </div>
+                    <div>{props.message}</div>
+                    <div className={s.time}>{props.time}</div>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
