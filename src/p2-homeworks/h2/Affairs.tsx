@@ -6,10 +6,12 @@ type AffairsPropsType = { // need to fix any
     data: Array<AffairType>
     setFilter: Function
     deleteAffairCallback: Function
+    changeFilter: Function
 }
 
 function Affairs(props: AffairsPropsType) {
     const mappedAffairs = props.data.map((a: AffairType) => (
+
         <Affair // should work
             key={a._id} // кеи ОБЯЗАТЕЛЬНЫ в 99% - так что лучше их писать всегда при создании компонент в мапе
             affair={a}
@@ -18,7 +20,6 @@ function Affairs(props: AffairsPropsType) {
     ))
 
     const setAll = () => {
-        debugger
         props.setFilter('All')
     } // need to fix
     const setHigh = () => {
@@ -28,6 +29,7 @@ function Affairs(props: AffairsPropsType) {
         props.setFilter('Middle')
     }
     const setLow = () => {
+
         props.setFilter('Low')
     }
 
@@ -35,11 +37,7 @@ function Affairs(props: AffairsPropsType) {
         <div>
 
             {mappedAffairs}
-{/*<ul>*/}
-{/*    {*/}
-{/*        props.data.map(e=><li><span>{e.name}</span></li>)*/}
-{/*    }*/}
-{/*</ul>*/}
+
             <button onClick={setAll}>All</button>
             <button onClick={setHigh}>High</button>
             <button onClick={setMiddle}>Middle</button>

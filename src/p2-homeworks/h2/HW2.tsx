@@ -16,32 +16,36 @@ const defaultAffairs:Array<AffairType> = [ //ok// need to fix any
     {_id: 2, name: 'anime', priority: 'low'},
     {_id: 3, name: 'games', priority: 'low'},
     {_id: 4, name: 'work', priority: 'high'},
-    {_id: 5, name: 'html & css', priority: 'middle'},
+    {_id: 5, name: 'html & y', priority: 'middle'},
 ]
 
-// pure helper functions
+// // pure helper functions
 export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): any => { // need to fix any
-    if (filter === 'all') return affairs
-    if (filter === 'High'){affairs=affairs.filter(a=>a.priority==="High")
-    return affairs}
-    if (filter === 'Middle'){affairs=affairs.filter(a=>a.priority==="Middle")
-    return affairs}
-    if (filter === 'Low') {affairs=affairs.filter(a=>a.priority==="Low")
-    return affairs}
+    let affairsToTodoList=affairs
+    if (filter === 'all') return affairsToTodoList
+    if (filter === 'High'){affairsToTodoList=affairs.filter(a=>a.priority==="High")
+    return affairsToTodoList}
+    if (filter === 'Middle'){affairsToTodoList=affairs.filter(a=>a.priority==="Middle")
+    return affairsToTodoList}
+    if (filter === 'Low') {affairsToTodoList=affairs.filter(a=>a.priority==="Low")
+    return affairsToTodoList}
     else return // need to fix
 }
 export const deleteAffair = (affairs: Array<AffairType>, _id: number): any => { // need to fix any
-    //affairs=affairs.filter(a=>a._id!==_id)
-    return // need to fix
+    affairs=affairs.filter(a=>a._id!==_id)
+    return affairs// need to fix
 }
 
 function HW2() {
     const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs) // ok *** need to fix any
-    const [filter, setFilter] = useState<FilterType>('all')
+    const [filter, setFilter] = useState<FilterType>("High")
 
+    const changeFilter=(value: FilterType)=> setFilter(value)
 
+    console.log("rednder component")
 
-    const filteredAffairs = filterAffairs(affairs, filter)
+     const filteredAffairs = filterAffairs(affairs, filter)
+
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
     return (
@@ -49,11 +53,12 @@ function HW2() {
             <hr/>
             homeworks 2
 
-            {/*should work (должно работать)*/}
+
             <Affairs
                 data={filteredAffairs}
                 setFilter={setFilter}
                 deleteAffairCallback={deleteAffairCallback}
+                changeFilter={changeFilter}
             />
 
             <hr/>
