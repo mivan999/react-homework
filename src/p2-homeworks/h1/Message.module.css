@@ -1,14 +1,14 @@
 /*@use postcss-nested;*/
 
 :root {
-    --send-bg: #0B93F6;
+    /*--send-bg: #073250;*/
     --send-color: white;
-    --receive-bg: #E5E5EA;
+    --receive-bg: rgba(229, 229, 234, 0.99);
     --receive-text: black;
-    --page-background: #5e2b2b;
+    /*--page-background: #5e2b2b;*/
 }
 
-/*body {*/
+body {
 /*    font-family: "Helvetica Neue", Helvetica, sans-serif;*/
 /*    font-size: 20px;*/
 /*    font-weight: normal;*/
@@ -16,12 +16,13 @@
 /*    margin: 50px 20px;*/
 /*    display: flex;*/
 /*    !*flex-direction: column;*!*/
-/*    background-color: var(--page-background);*/
-/*}*/
+    background-image: url(https://img5.goodfon.ru/wallpaper/nbig/c/e2/kosmos-zviozdy-space.jpg);
+    /*background-color:   "https://cdn.mirf.ru/wp-content/uploads/2017/09/start1-2-1536x983.jpg";*/
+}
 .message{
     padding-top: 20px;
     display: flex;
-    background-color: aqua;
+    /*background-color: aqua;*/
 }
 .message img {
     /*display: inline;*/
@@ -31,6 +32,7 @@
     /*margin-top: 35px;*/
     /*margin-bottom: 7px;*/
     /*!*background-color: #0B93F6;*!*/
+    align-self: end;
     z-index: 100;
 }
 .message .time{
@@ -75,7 +77,8 @@
 .receive:after {
      left: -26px;
      width: 26px;
-     background-color:aqua;
+    background-image: url(https://img5.goodfon.ru/wallpaper/nbig/c/e2/kosmos-zviozdy-space.jpg);
+     /*background-color: #331d94;*/
      /*//var(--page-background);*/
      border-bottom-right-radius: 20px;
     z-index: 0;
