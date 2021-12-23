@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState,KeyboardEvent} from 'react'
 import Message from './Message';
 //
 // const messageTest = {
@@ -18,14 +18,14 @@ function AlternativeMessage() {
     }
     ]);
 
-    const addMsg = (event: any) => {
+    const addMsg = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
             let date = new Date()
             setMsg([...msg,
                 {
                     avatar: 'https://sun9-74.userapi.com/Ph-WiuOtF985il9AvN9JqiCWedmHtSGSSTXrSA/ltEB2Z2-YO4.jpg',
                     name: 'Some Name',
-                    message: event.target.value,
+                    message: event.currentTarget.value,
                     time: String(date.getHours())+":"+String(date.getMinutes()),
                 }])
             setMess("")

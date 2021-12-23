@@ -19,68 +19,84 @@ body {
     background-image: url(https://img5.goodfon.ru/wallpaper/nbig/c/e2/kosmos-zviozdy-space.jpg);
     /*background-color:   "https://cdn.mirf.ru/wp-content/uploads/2017/09/start1-2-1536x983.jpg";*/
 }
-.message{
-    padding-top: 20px;
-    display: flex;
-    /*background-color: aqua;*/
-}
-.message img {
-    /*display: inline;*/
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    /*margin-top: 35px;*/
-    /*margin-bottom: 7px;*/
-    /*!*background-color: #0B93F6;*!*/
+.angle {
     align-self: end;
-    z-index: 100;
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at 0 0, rgba(0,0,0,0) 15px, rgba(255,255,255,0.3)0);
 }
-.message .time{
-    color: rgba(255, 0, 0, 0.42);
+.message {
+    /*padding-top: 20px;*/
+    margin: 10px;
+    display: flex;
+    align-self: end;
+
+}
+.avatar {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    align-self: end;
+
+}
+.text {
+    margin: 10px;
+    min-width: 150px;
+    max-width: 300px;
+    word-wrap: break-word; /*перенос слов*/
+}
+.time{
+    margin: 10px;
+    color: rgba(255, 255, 255, 0.89);
     text-align: right;
     top: -7px
 }
-.message .name{
+.name{
+    margin: 10px;
+    font-size: 20px;
+    font-weight: bold;
     color: blue;
 }
-.message div {
-    max-width: 255px;
-    word-wrap: break-word;
-    margin-bottom: 0;
-    line-height: 12px;
-    position: relative;
-    padding: 5px 10px;
-    border-radius: 25px;
-}
-.message div:before, div:after {
-               content: "";
-               position: absolute;
-               bottom: 0;
-               height: 35px;
-           }
+/*.message div {*/
+/*    max-width: 255px;*/
+/*    word-wrap: break-word;*/
+/*    margin-bottom: 0;*/
+/*    line-height: 12px;*/
+/*    position: relative;*/
+/*    padding: 5px 10px;*/
+/*    border-radius: 25px 25px 25px 0;*/
+/*}*/
+/*.message div:before, div:after {*/
+/*               content: "";*/
+/*               position: absolute;*/
+/*               bottom: 0;*/
+/*               height: 35px;*/
+/*           }*/
 
 
 .receive {
-    left: 15px;
-    bottom: 20px;
-    background: var(--receive-bg);
+    /*left: 15px;*/
+    /*bottom: 20px;*/
+
+    border-radius: 5px 5px 5px 0;
+background: rgba(255,255,255,0.3);
     color: black;
     align-self: flex-start;
 }
-.receive:before {
-     left: -10px;
-     width: 20px;
-     background-color: var(--receive-bg);
-     border-bottom-right-radius: 16px 14px;
- }
+/*.receive:before {*/
+/*     left: -10px;*/
+/*     width: 20px;*/
+/*     background-color: var(--receive-bg);*/
+/*     border-bottom-right-radius: 16px 14px;*/
+/* }*/
 
-.receive:after {
-     left: -26px;
-     width: 26px;
-    background-image: url(https://img5.goodfon.ru/wallpaper/nbig/c/e2/kosmos-zviozdy-space.jpg);
-     /*background-color: #331d94;*/
-     /*//var(--page-background);*/
-     border-bottom-right-radius: 20px;
-    z-index: 0;
- }
+/*.receive:after {*/
+/*     left: -26px;*/
+/*     width: 26px;*/
+/*    background-image: url(https://img5.goodfon.ru/wallpaper/nbig/c/e2/kosmos-zviozdy-space.jpg);*/
+/*     !*background-color: #331d94;*!*/
+/*     !/var(--page-background);*!*!*/
+/*     border-bottom-right-radius: 20px;*/
+/*    z-index: 0;*/
+/* }*/
 
