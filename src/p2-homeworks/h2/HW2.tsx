@@ -2,16 +2,16 @@ import React, {useState} from 'react'
 import Affairs from './Affairs'
 
 // types
-export type AffairPriorityType = 'High' | 'Middle' | 'Low' // ok *** need to fix any
+export type AffairPriorityType = 'high' | 'middle' | 'low' // ok *** need to fix any
 export type AffairType = {
     _id: number
     name: string
-    priority: string
+    priority: AffairPriorityType
 } //ok ** need to fix any
 export type FilterType = 'all' | AffairPriorityType
 
 // constants
-const defaultAffairs:Array<AffairType> = [ //ok// need to fix any
+const defaultAffairs: Array<AffairType> = [ //ok// need to fix any
     {_id: 1, name: 'React', priority: 'high'},
     {_id: 2, name: 'anime', priority: 'low'},
     {_id: 3, name: 'games', priority: 'low'},
@@ -20,31 +20,35 @@ const defaultAffairs:Array<AffairType> = [ //ok// need to fix any
 ]
 
 // // pure helper functions
-export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): any => { // need to fix any
-    let affairsToTodoList=affairs
+export const filterAffairs = (affairs: Array<AffairType>, filter: FilterType): Array<AffairType> => { // need to fix any
+    let affairsToTodoList = affairs
     if (filter === 'all') return affairsToTodoList
-    if (filter === 'High'){affairsToTodoList=affairs.filter(a=>a.priority==="High")
-    return affairsToTodoList}
-    if (filter === 'Middle'){affairsToTodoList=affairs.filter(a=>a.priority==="Middle")
-    return affairsToTodoList}
-    if (filter === 'Low') {affairsToTodoList=affairs.filter(a=>a.priority==="Low")
-    return affairsToTodoList}
-    else return // need to fix
+    if (filter === 'high') {
+        affairsToTodoList = affairs.filter(a => a.priority === 'high')
+        return affairsToTodoList
+    }
+    if (filter === 'middle') {
+        affairsToTodoList = affairs.filter(a => a.priority === 'middle')
+        return affairsToTodoList
+    }
+    if (filter === 'low') {
+        affairsToTodoList = affairs.filter(a => a.priority === 'low')
+        return affairsToTodoList
+    } else return []// need to fix
 }
-export const deleteAffair = (affairs: Array<AffairType>, _id: number): any => { // need to fix any
-    affairs=affairs.filter(a=>a._id!==_id)
+export const deleteAffair = (affairs: Array<AffairType>, _id: number): Array<AffairType> => { // need to fix any
+    affairs = affairs.filter(a => a._id !== _id)
     return affairs// need to fix
 }
+// export const changeFilter=(value)=>{
+//     return value
+// }
 
 function HW2() {
     const [affairs, setAffairs] = useState<Array<AffairType>>(defaultAffairs) // ok *** need to fix any
-    const [filter, setFilter] = useState<FilterType>("High")
+    const [filter, setFilter] = useState<FilterType>('all')
 
-    const changeFilter=(value: FilterType)=> setFilter(value)
-
-    console.log("rednder component")
-
-     const filteredAffairs = filterAffairs(affairs, filter)
+    const filteredAffairs = filterAffairs(affairs, filter)
 
     const deleteAffairCallback = (_id: number) => setAffairs(deleteAffair(affairs, _id)) // need to fix any
 
@@ -58,7 +62,6 @@ function HW2() {
                 data={filteredAffairs}
                 setFilter={setFilter}
                 deleteAffairCallback={deleteAffairCallback}
-                changeFilter={changeFilter}
             />
 
             <hr/>

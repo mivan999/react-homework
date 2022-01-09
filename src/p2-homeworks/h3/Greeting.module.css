@@ -1,7 +1,17 @@
 .someClass {
 
 }
-
+.total{
+    color:white;
+    margin-left: 5px;
+}
 .error {
     border: 1px solid red;
+    color: #678647;
+}
+
+.spanError {
+    border: none;
+    color: #ceb663;
+
 }

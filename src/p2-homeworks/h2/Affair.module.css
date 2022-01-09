@@ -1,0 +1,15 @@
+.name {
+color:red;
+    padding: 5px;
+    font-weight: bold;
+}
+.affair {
+color: aliceblue;
+padding: 5px;
+}
+.affairs{
+display: grid;
+grid-template-columns: 1fr 1fr 30px 10fr ;
+}
+
+
