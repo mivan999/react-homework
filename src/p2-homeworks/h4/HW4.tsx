@@ -6,7 +6,7 @@ import SuperCheckbox from './common/c3-SuperCheckbox/SuperCheckbox'
 
 function HW4() {
     const [text, setText] = useState<string>('')
-    const error = text ? '' : 'error'
+    const error = text ? '' : 'enter text'
 
     const showAlert = () => {
         if (error) {
@@ -18,7 +18,7 @@ function HW4() {
 
     const [checked, setChecked] = useState<boolean>(false)
     const testOnChange = (e: ChangeEvent<HTMLInputElement>) => setChecked(e.currentTarget.checked)
-
+    console.log("error= ",error)
     return (
         <div>
             <hr/>
