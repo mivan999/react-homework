@@ -6,11 +6,13 @@ type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonE
 
 type SuperButtonPropsType = DefaultButtonPropsType & {
     red?: boolean
+    label?:string
 }
 
 const SuperButton: React.FC<SuperButtonPropsType> = (
     {
         red, className,
+        label,
         ...restProps// все остальные пропсы попадут в объект restProps, там же будет children
     }
 ) => {
